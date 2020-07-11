@@ -5,8 +5,20 @@
 div{
   margin-top: 40px;
 }
+
 .cuadro{
   border-style: solid;
+  margin: 25px;
+  width: 550px;
+  padding: 10px;
+}
+
+h1{
+  letter-spacing: 15px;
+}
+
+button{
+  margin-top:20px;
 }
 .App-logo {
   height: 40vmin;
