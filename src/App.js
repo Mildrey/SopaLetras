@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Entropy} from 'entropy-string'
 import logo from './logo.svg';
 import './App.css';
 import SopaLetras from './SopaLetras';
@@ -8,33 +9,39 @@ class App extends React.Component {
     super(props);
     this.state = {
      items: [], 
-     text: 'qwesopadeletra',
-     textRever: ''};
+     text: '',
+     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange(e) {
+  
+  handleChange = (e) => {
       this.setState({ text: e.target.value});
       if (e.target.value.length > e.target.maxLength) {
       e.target.value = e.target.value.slice(0, e.target.maxLength)
-      }
     }
+  }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
       e.preventDefault();
+      
 
       const newItem = {
         text: this.state.text,
-        id: Date.now()
+        id: Date.now(),
       };
+
+
       this.setState(state => ({
         items: state.items.concat(newItem),
-        text: ''
       }));
     }
 
   render() {
+
     return (
+       
       <div className="container">
         <h3>Sopa de letras</h3>       
           <form onSubmit={this.handleSubmit}>
@@ -55,7 +62,7 @@ class App extends React.Component {
               </button>
             </div>
         </form>
-        <SopaLetras items={this.state.items} />
+        <SopaLetras items={this.state.items}/>
       </div>
     );
   }
