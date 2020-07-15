@@ -1,3 +1,8 @@
+### SOPA DE LETRAS
+
+lA sopa de letras acepta por medio de varios input varias palabras para colocarla dentro de la sopa de letras, las palabras insertadas se deben colocar en la sopa de letras en todos los sentidos de manera aleatoria: izquierda-derecha, derecha-izquierda, arriba-abajo, abajo, arriba  y diagonales en todos los sentidos. este aplicativo web esta desarollado con React js.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
