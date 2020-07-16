@@ -5,21 +5,12 @@ class SopaLetras extends React.Component {
  
   render() {
 
-   var nuevoArray = new Array(10);
+    var nuevoArray = new Array(10);
     /* --- INPUT1 ----*/
-    var arrayPalabara = []
     var variableInput = this.props.items
-    
-    for(var i=0;i<variableInput.length;i++){   // divide las palabra en letras
-      var letra = variableInput.slice(i,i+1)
-      arrayPalabara.push(letra)
-      console.log(arrayPalabara[i])
-    }
-
-    var result           =  '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var charactersLength = characters.length;
-    var p=0;
+
 
     for ( var i = 0; i <= 10 ; i++ ) {  //crea un array de  10x10
       nuevoArray[i] = new Array(10)
@@ -31,14 +22,18 @@ class SopaLetras extends React.Component {
         console.log(nuevoArray[i][j])
       }   
     }
-
+    for(var i=0;i<variableInput.length;i++){   // divide las palabra en letras
+      for (var j = 0; j < variableInput.length; j++) {
+         nuevoArray[i][6]= variableInput.slice(i,i+1)
+      }
+    }
     
     return (
       <div>
         {
-          nuevoArray.map((object, i) => (
+          nuevoArray.map((row, i) => (
             <div key={i} className="row row-cols-10">
-                {object.map((letra, j) => (<div className="col border" key={j}>{letra}</div>))}
+                {row.map((letra, j) => (<div className="col border" key={j}>{letra}</div>))}
            </div>
           ))
         }

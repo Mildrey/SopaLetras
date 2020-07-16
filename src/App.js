@@ -77,7 +77,7 @@ class App extends React.Component {
               </label>
               <input
                 id="new-todo"
-                maxLength = "6"
+                maxLength = "10"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChange}
                 value={this.state.text}
@@ -85,7 +85,7 @@ class App extends React.Component {
                 <br/>
               <input
                 id="new-todo"
-                maxLength = "5"
+                maxLength = "10"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChangetext2}
                 value={this.state.text2}
@@ -93,7 +93,7 @@ class App extends React.Component {
                  <br/>
               <input
                 id="new-todo"
-                maxLength = "5"
+                maxLength = "10"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChangetext3}
                 value={this.state.text3}
