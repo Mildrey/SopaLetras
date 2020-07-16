@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 class SopaLetras extends React.Component {
  
   render() {
-   var nuevoArray = new Array(10);
 
+   var nuevoArray = new Array(10);
     /* --- INPUT1 ----*/
     var arrayPalabara = []
     var variableInput = this.props.items
@@ -16,7 +16,7 @@ class SopaLetras extends React.Component {
       console.log(arrayPalabara[i])
     }
 
-    var result           = '';
+    var result           =  '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var charactersLength = characters.length;
     var p=0;
@@ -27,8 +27,7 @@ class SopaLetras extends React.Component {
 
     for (var i = 0; i <10; i++) {  // llena el array con letras aleatoreas
       for (var j = 0; j < 10; j++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        nuevoArray[i][j] =result.slice(j,j+1)
+        nuevoArray[i][j]= characters.charAt(Math.floor(Math.random() * charactersLength));
         console.log(nuevoArray[i][j])
       }   
     }
