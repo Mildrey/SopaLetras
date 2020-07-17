@@ -5,12 +5,13 @@ class SopaLetras extends React.Component {
  
   render() {
 
-    var nuevoArray = new Array(10);
+   var nuevoArray = new Array(10);
     /* --- INPUT1 ----*/
+
     var variableInput = this.props.items
+    var input = variableInput.toString()
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var charactersLength = characters.length;
-
 
     for ( var i = 0; i <= 10 ; i++ ) {  //crea un array de  10x10
       nuevoArray[i] = new Array(10)
@@ -22,12 +23,30 @@ class SopaLetras extends React.Component {
         console.log(nuevoArray[i][j])
       }   
     }
-    for(var i=0;i<variableInput.length;i++){   // divide las palabra en letras
-      for (var j = 0; j < variableInput.length; j++) {
-         nuevoArray[i][6]= variableInput.slice(i,i+1)
+   
+  var x = Math.round(Math.random()*9) // le damos un numero random a la variable x
+  var y = Math.round(Math.random()*5) // le damos un numero random a la variable y
+  var numerador = 0  // 
+  var numeroRandom = Math.round(Math.random()*1) 
+
+  if (numeroRandom ==1 ) {              // posicion random de derecha-izquierda y de izquierda-derecha
+    for(var i=y; i<= input.length+y; i++){
+      for (var j = x; i < input.length+y; i++) {
+        nuevoArray[j][i] = input.charAt(numerador)
+        numerador++
       }
     }
-    
+  }
+  else{
+    for (var i = input.length + y; i >= y; i--) {
+      for (var j = input.length + y; j >= y ; j--) {
+           nuevoArray[i][j] = input.charAt(numerador)
+           numerador++
+      }
+    }
+  }
+  
+  
     return (
       <div>
         {

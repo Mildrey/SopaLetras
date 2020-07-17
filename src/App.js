@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Entropy} from 'entropy-string'
-import logo from './logo.svg';
 import './App.css';
 import SopaLetras from './SopaLetras';
 
@@ -77,7 +75,7 @@ class App extends React.Component {
               </label>
               <input
                 id="new-todo"
-                maxLength = "10"
+                maxLength = "5"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChange}
                 value={this.state.text}
@@ -85,7 +83,7 @@ class App extends React.Component {
                 <br/>
               <input
                 id="new-todo"
-                maxLength = "10"
+                maxLength = "5"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChangetext2}
                 value={this.state.text2}
