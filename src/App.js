@@ -91,7 +91,7 @@ class App extends React.Component {
                  <br/>
               <input
                 id="new-todo"
-                maxLength = "10"
+                maxLength = "7"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChangetext3}
                 value={this.state.text3}
