@@ -58,7 +58,6 @@ class App extends React.Component {
       items: this.state.text,
       items2: this.state.text2,
       items3: this.state.text3,
-      items4:this.state.text4,
       }));
   }
 
@@ -91,19 +90,11 @@ class App extends React.Component {
                  <br/>
               <input
                 id="new-todo"
-                maxLength = "7"
+                maxLength = "5"
                 className="form-control col-sm-6 col-md-6 col-lg-2" 
                 onChange={this.handleChangetext3}
                 value={this.state.text3}
                />
-                 <br/>
-              <input
-                id="new-todo"
-                maxLength = "5"
-                className="form-control col-sm-6 col-md-6 col-lg-2" 
-                onChange={this.handleChangetext4}
-                value={this.state.text4}
-              />
               <button className="btn btn-success">
                  Añadir
               </button>

@@ -13,10 +13,10 @@ class SopaLetras extends React.Component {
     var variableInput3 = this.props.items3;
     var variableInput4 = this.props.items4;
 
-    var input = variableInput.toString();
-    var input2 = variableInput2.toString();
-    var input3 = variableInput3.toString();
-    var input4 = variableInput4.toString();
+    var input = variableInput.toString().toUpperCase();
+    var input2 = variableInput2.toString().toUpperCase();
+    var input3 = variableInput3.toString().toUpperCase();
+    var input4 = variableInput4.toString().toUpperCase();
 
     var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var charactersLength = characters.length;
@@ -34,22 +34,24 @@ class SopaLetras extends React.Component {
       }
     }
 
-    var numerador = 0; //
-    var numeroRandom = Math.round(Math.random() * 1);
+    var numero1= Math.round(Math.random() * 1);
+    var numero2= Math.round(Math.random() * 1);
+    var numero3= Math.round(Math.random() * 1);
+   
 
     var posicioninicialy = 0;
     var posicioninicialy=0;
     var posicioninicialx = 0;
 
     // posicion random de derecha-izquierda posicioninicialy de izquierda-derecha
-    if (numeroRandom == 1) {
+   if (numero1 >= 1) {
     //izquierda a derecha (horizontal)
     posicioninicialx = Math.round(Math.random() * ( input.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
     posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
       for (var i = 0; i < input.length; i++) {
         nuevoArray[posicioninicialy][posicioninicialx + i] = input.charAt(i);
       }
-    }else{
+    }else if(numero1 === 0){
       //derecha  a izquierda (horizontal)
      posicioninicialx = Math.round(Math.random() * ( input.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
      posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
@@ -58,32 +60,33 @@ class SopaLetras extends React.Component {
       }
     }
      // posicion random de derecha-izquierda posicioninicialy de izquierda-derecha
-    if (numeroRandom == 1) {
+    if (numero2 === 1) {
      //arriba  a bajo (vertical)
-      posicioninicialx = Math.round(Math.random() * 9); // le damos un numero random a la variable posicioninicialx
+      posicioninicialx = Math.round(Math.random() * ( input2.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
       posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
       for (var i = 0; i < input2.length; i++) {
        nuevoArray[posicioninicialx + i][posicioninicialy] = input2.charAt(i);
       }
-    }else{
+    }else if(numero2 === 0){
       //abajo a arriba (vertical)
-      posicioninicialx = Math.round(Math.random() *( input.length + 9)); // le damos un numero random a la variable posicioninicialx
+      posicioninicialx = Math.round(Math.random() * ( input2.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
       posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
       for (var i = 0; i < input2.length; i++) {
         nuevoArray[posicioninicialx - i ][posicioninicialy] = input2.charAt(i);
       }
     }
-    
-    if (numeroRandom == 1) {
+
+    if (numero3 === 1) {
       // arriba a abajo  (diagonal)
-      posicioninicialx = Math.round(Math.random() * ( anchosopa + input3.length)); // le damos un numero random a la variable posicioninicialx
-      posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
+      posicioninicialx = Math.round(Math.random() * ( input3.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
+      posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy   
+
       for (var i = 0; i < input3.length; i++) {
        nuevoArray[posicioninicialx + i][posicioninicialy + i] = input3.charAt(i);
       }
-    }else{
+    }else if(numero3 === 0){
      //abajo a arriba (diagonal)
-      posicioninicialx = Math.round(Math.random() * ( anchosopa + input3.length)); // le damos un numero random a la variable posicioninicialx
+      posicioninicialx = Math.round(Math.random() *( input3.length + anchosopa)); // le damos un numero random a la variable posicioninicialx
       posicioninicialy = Math.round(Math.random() * altosopa); // le damos un numero random a la variable posicioninicialy
       for (var i = 0; i < input3.length; i++) {
        nuevoArray[posicioninicialx - i][posicioninicialy - i] = input3.charAt(i);

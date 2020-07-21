@@ -6,6 +6,9 @@ div{
   margin-top: 40px;
 }
 
+input{
+  text-transform: uppercase;
+}
 .cuadro{
   border-style: solid;
   margin: 25px;
