@@ -48,8 +48,6 @@ class SopaLetras extends React.Component {
    if (numero1 >= 1) {
     posicioninicialx = Math.floor(Math.random() * (anchosopa - input.length)); // le damos un numero random a la variable posicioninicialx
     posicioninicialy = Math.round(Math.random() * ( altosopa - 1)); // le damos un numero random a la variable posicioninicialy
-    console.log(posicioninicialx)
-    console.log(posicioninicialy)
       for (var i = 0; i < input.length; i++) {
         nuevoArray[posicioninicialy][posicioninicialx + i] = input.charAt(i);
       }
@@ -95,6 +93,24 @@ class SopaLetras extends React.Component {
      for (var i = 0; i < input3.length; i++) {
       nuevoArray[posicioninicialy - i][posicioninicialx - i] = input3.charAt(i);
      }
+    }
+
+    if (numero3 === 1) {
+    //arriba  a bajo (vertical)
+      posicioninicialx = Math.round(Math.random() * (anchosopa-1)); // le damos un numero random a la variable posicioninicialx
+      posicioninicialy = Math.round(Math.random() * (altosopa - input4.length)); // le damos un numero random a la variable posicioninicialy
+      for (var i = 0; i < input2.length; i++) {
+       nuevoArray[posicioninicialy + i ][posicioninicialx] = input4.charAt(i);
+      }
+    }else if(numero3 === 0){
+     //abajo a arriba (diagonal)
+     // arriba a abajo  (diagonal)
+     posicioninicialx = Math.round(Math.random() * (anchosopa - input4.length)); // le damos un numero random a la variable posicioninicialx
+     posicioninicialy = Math.round(Math.random() * (altosopa - input4.length)); // le damos un numero random a la variable posicioninicialy   
+
+     for (var i = 0; i < input3.length; i++) {
+      nuevoArray[posicioninicialy + i][posicioninicialx + i] = input4.charAt(i);
+      }
     }
      
 
